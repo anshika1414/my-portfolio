@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FaGithub, FaExternalLinkAlt, FaTimes, FaArrowRight, FaLightbulb, FaTools, FaCheckCircle } from 'react-icons/fa'
+import { FaGithub, FaTimes, FaArrowRight, FaLightbulb, FaTools, FaCheckCircle } from 'react-icons/fa'
 
 const projects = [
   {
@@ -22,38 +22,35 @@ const projects = [
       { label: 'Accuracy', value: '85%' },
       { label: 'Data Points', value: '2M+' }
     ],
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&fit=crop&q=80&w=800',
     tags: ['Python', 'ML', 'Streamlit'],
     techStack: 'Python (Scikit-learn, Pandas, NumPy), Streamlit, Matplotlib, Seaborn',
-    github: 'https://github.com',
-    demo: 'https://example.com'
+    github: 'https://github.com'
   },
   {
     id: 2,
-    title: 'Digital Footprint',
-    subtitle: 'OSINT-Based Personal Vulnerability System',
-    shortDesc: 'An AI-driven system that analyzes a user’s online activity and evaluates potential digital reputation and privacy risks.',
-    overview: 'Digital Footprint Risk Analyzer is an OSINT-based tool that scans a person\'s public digital presence — including breach history, social media activity, and toxicity patterns — and generates a 0–100 risk score using NLP and Machine Learning, presented through an interactive web dashboard.',
-    problem: 'Individuals unknowingly expose sensitive personal information across the internet through data breaches, social media, and public forums — yet no simple tool exists to measure this risk. This project automates that process by scanning public digital traces and delivering a clear, ML-powered risk score.',
-    methodology: 'We built an end-to-end risk analysis system that takes an email and public profile URLs as input, automatically collects data from breach databases and social platforms, and uses NLP and ML to convert raw public data into an interpretable risk score — giving users a clear picture of their digital vulnerability in seconds.',
+    title: 'COVIDScope',
+    subtitle: 'Real-Time Pandemic Analytics Dashboard',
+    shortDesc: 'An interactive data analytics dashboard designed to monitor and visualize global pandemic trends in real time.',
+    overview: 'COVIDScope is an interactive data analytics dashboard designed to monitor and visualize global pandemic trends in real time. The system consolidates large-scale epidemiological data into intuitive visual insights, enabling faster exploration of case patterns, recovery dynamics, and mortality trends across countries and time periods.',
+    problem: 'During rapidly evolving health crises, decision-makers and analysts struggle to interpret fragmented pandemic data distributed across multiple sources. Static reports and delayed updates limit situational awareness and slow down data-driven responses. There is a need for a centralized, real-time analytics platform that transforms raw pandemic datasets into meaningful visual intelligence for effective monitoring and policy support.',
+    methodology: '• Collected and preprocessed large-scale global COVID-19 datasets from publicly available repositories\n• Engineered time-series features to capture trend progression and regional variations\n• Designed interactive visualization modules using Plotly and geospatial mapping techniques\n• Implemented dynamic country and date filters to enable targeted exploratory analysis\n• Built automated data refresh pipelines to maintain dashboard accuracy and relevance\n• Structured dashboard layouts to highlight comparative trend patterns and anomaly detection',
     features: [
-      'Email breach detection using XposedOrNot API',
-      'Reddit and YouTube comment toxicity analysis using NLP',
-      'Unified 0–100 risk scoring with Low / Med / High labels',
-      'Component-wise score breakdown for explainability',
-      'Interactive dashboard with risk gauge indicators',
-      'REST API backend connecting ML pipeline'
+      'Real-time visualization of confirmed cases, deaths, and recoveries',
+      'Country-wise and time-range interactive filtering',
+      'Geospatial heatmaps for regional trend analysis',
+      'Automated data update workflow for improved data reliability',
+      'Consolidated multi-chart dashboard'
     ],
-    impact: 'The tool identified an average of 3 forgotten data breaches per user and successfully quantified reputation risk shifts with 92% alignment to manual expert audits.',
+    impact: 'Improved data exploration efficiency by approximately 50% through interactive filtering mechanisms. Enhanced end-user comprehension of pandemic trends by nearly 60% via visual pattern consolidation.',
     metrics: [
-      { label: 'Risk Accuracy', value: '92%' },
-      { label: 'Data Points', value: '500+' }
+      { label: 'Efficiency', value: '+50%' },
+      { label: 'Analysis Speed', value: '+60%' }
     ],
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800',
-    tags: ['Python', 'NLP', 'OSINT'],
-    techStack: 'Python (FastAPI, Scikit-learn, NLTK), React.js, OSINT APIs (XposedOrNot, PRAW)',
-    github: 'https://github.com',
-    demo: 'https://example.com'
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+    tags: ['Python', 'Pandas', 'Plotly'],
+    techStack: 'Python, Pandas, Plotly, Data Visualization, Machine Learning Concepts, Dashboard Design',
+    github: 'https://github.com'
   },
   {
     id: 3,
@@ -74,11 +71,10 @@ const projects = [
       { label: 'Precision', value: '99%' },
       { label: 'Calc Time', value: '<1ms' }
     ],
-    image: 'https://images.unsplash.com/photo-1523050335192-ce1790bd00b2?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800',
     tags: ['C++', 'Algorithms'],
     techStack: 'C++, Graph Theory (Dijkstra), Data Structures, STL',
-    github: 'https://github.com',
-    demo: 'https://example.com'
+    github: 'https://github.com'
   }
 ]
 
@@ -104,24 +100,24 @@ export default function Projects() {
   }, [selectedProject])
 
   return (
-    <section id="projects" className="py-20 sm:py-28 px-4 bg-[#05071a] relative" style={{ backgroundColor: '#05071a' }}>
+    <section id="projects" className="py-14 sm:py-20 px-4 relative">
       {/* Decorative background glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600/5 blur-[150px] -z-10" />
       
       <div className="max-w-7xl mx-auto">
         {/* Section Heading */}
-        <div className="max-w-3xl mb-16 reveal">
+        <div className="max-w-3xl mb-10 reveal">
           <p className="text-primary-400 font-display font-black text-xs tracking-[0.4em] uppercase mb-4">
             Selected Works
           </p>
-          <h2 className="font-display font-black text-5xl md:text-7xl text-white leading-tight tracking-tighter">
+          <h2 className="font-display font-black text-4xl md:text-5xl text-white leading-tight tracking-tighter">
             Digital <span className="gradient-text">Explorations</span>
           </h2>
-          <div className="w-20 h-1.5 bg-primary-500 rounded-full mt-8" />
+          <div className="w-16 h-1 bg-primary-500 rounded-full mt-6" />
         </div>
 
         {/* Stacked Project Cards */}
-        <div className="project-container-stack flex flex-col gap-12 lg:gap-16">
+        <div className="project-container-stack flex flex-col gap-8 lg:gap-10">
           {projects.map((project, index) => (
             <div
               key={project.id}
@@ -129,34 +125,35 @@ export default function Projects() {
               style={{ 
                 top: `${100 + index * 35}px`, 
                 zIndex: index + 10,
-                paddingBottom: '20vh'
+                paddingBottom: '12vh'
               }}
             >
               <div 
                 onClick={() => setSelectedProject(project)}
-                className="reveal rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.6)] flex flex-col md:flex-row min-h-[500px] group project-card-stack transition-all duration-700 hover:border-primary-500/40 cursor-pointer"
+                className="reveal rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.6)] flex flex-col md:flex-row min-h-[400px] group project-card-stack transition-all duration-700 hover:border-primary-500/40 cursor-pointer"
                 style={{ 
                   backgroundColor: '#0a0c1e',
                   opacity: 1 
                 }}
               >
                 {/* Project Image Section */}
-                <div className="w-full md:w-[45%] lg:w-1/2 relative overflow-hidden h-64 md:h-auto">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-dark-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="bg-white text-black px-8 py-4 rounded-full font-display font-bold text-xs uppercase tracking-[0.2em] shadow-2xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      Explore Case Study
-                    </span>
+                <div className="w-full md:w-[45%] lg:w-1/2 flex flex-col items-center justify-center p-5 md:p-8 gap-5">
+                  <div className="w-full overflow-hidden rounded-xl">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      style={{ width: '100%', height: 'auto', maxHeight: '250px', objectFit: 'cover', borderRadius: '12px' }}
+                      className="transition-transform duration-700 group-hover:scale-105"
+                    />
                   </div>
+                  <span className="bg-white text-black px-6 py-3 rounded-full font-display font-bold text-xs uppercase tracking-[0.2em] shadow-2xl group-hover:bg-primary-500 group-hover:text-white transition-all duration-500 cursor-pointer">
+                    Explore Case Study
+                  </span>
                 </div>
 
                 {/* Project Content Section */}
-                <div className="w-full md:w-[55%] lg:w-1/2 p-10 lg:p-14 flex flex-col">
-                  <div className="flex flex-wrap gap-2 mb-8">
+                <div className="w-full md:w-[55%] lg:w-1/2 p-8 lg:p-10 flex flex-col">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -167,32 +164,32 @@ export default function Projects() {
                     ))}
                   </div>
                   
-                  <div className="mb-8">
-                    <h3 className="font-display font-bold text-4xl lg:text-6xl text-white leading-[1.1] tracking-tight mb-2 group-hover:text-primary-300 transition-colors duration-300">
+                  <div className="mb-6">
+                    <h3 className="font-display font-bold text-3xl lg:text-4xl text-white leading-[1.1] tracking-tight mb-2 group-hover:text-primary-300 transition-colors duration-300">
                       {project.title}
                     </h3>
                     {project.subtitle && (
-                      <p className="text-primary-400/80 font-display font-medium text-xl lg:text-3xl tracking-wide uppercase">
+                      <p className="text-primary-400/80 font-display font-medium text-lg lg:text-2xl tracking-wide uppercase">
                         {project.subtitle}
                       </p>
                     )}
                   </div>
                   
                   {/* Quick Metrics */}
-                  <div className="flex gap-10 mb-10">
+                  <div className="flex gap-8 mb-6">
                     {project.metrics.map((metric) => (
                       <div key={metric.label}>
-                        <p className="text-[10px] uppercase tracking-[0.2em] text-primary-400 font-bold mb-2 opacity-60">{metric.label}</p>
-                        <p className="text-2xl lg:text-3xl font-display font-bold text-white">{metric.value}</p>
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-primary-400 font-bold mb-2 opacity-60" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{metric.label}</p>
+                        <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{metric.value}</p>
                       </div>
                     ))}
                   </div>
 
-                  <p className="text-white/60 text-base lg:text-lg leading-relaxed mb-10 font-medium line-clamp-3">
+                  <p className="text-white/60 text-sm lg:text-base leading-relaxed mb-6 font-medium line-clamp-3">
                     {project.shortDesc}
                   </p>
 
-                  <div className="mt-auto pt-8 border-t border-white/5 flex items-center justify-between">
+                  <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
                     <div className="flex items-center gap-4 text-white font-display font-bold text-xs uppercase tracking-[0.3em] group-hover:gap-6 transition-all duration-300">
                       View full analysis <FaArrowRight className="text-primary-400" />
                     </div>
@@ -305,12 +302,12 @@ export default function Projects() {
                   {/* Sidebar Info */}
                   <div className="space-y-10">
                     <div className="p-8 rounded-[2rem] bg-gradient-to-br from-primary-500/10 to-transparent border border-primary-500/20">
-                      <h4 className="text-white font-display font-black text-xs uppercase tracking-[0.3em] mb-8">Metrics & Impact</h4>
+                      <h4 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Metrics & Impact</h4>
                       <div className="space-y-6">
                         {selectedProject.metrics.map((metric) => (
                           <div key={metric.label}>
-                            <p className="text-[10px] uppercase tracking-widest text-primary-400 font-black mb-1">{metric.label}</p>
-                            <p className="text-3xl font-display font-black text-white">{metric.value}</p>
+                            <p className="text-[10px] uppercase tracking-widest text-primary-400 font-black mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{metric.label}</p>
+                            <p className="text-3xl font-black text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{metric.value}</p>
                           </div>
                         ))}
                       </div>
@@ -330,14 +327,7 @@ export default function Projects() {
                       >
                         <FaGithub size={18} /> View Repository
                       </a>
-                      <a
-                        href={selectedProject.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-3 w-full py-5 border border-white/10 text-white font-display font-black text-xs uppercase tracking-[0.2em] rounded-2xl hover:bg-white/10 transition-all duration-300"
-                      >
-                        <FaExternalLinkAlt size={16} /> Launch Demo
-                      </a>
+
                     </div>
                   </div>
                 </div>

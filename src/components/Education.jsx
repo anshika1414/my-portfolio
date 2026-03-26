@@ -23,17 +23,17 @@ const education = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 sm:py-28 px-4">
+    <section id="education" className="py-14 sm:py-20 px-4">
       <div className="max-w-4xl mx-auto relative">
         {/* Section Heading */}
-        <div className="text-center mb-12 reveal">
+        <div className="text-center mb-10 reveal">
           <p className="text-primary-400 font-medium text-xs tracking-[0.3em] uppercase mb-4 text-center w-full">
             Academic Journey
           </p>
-          <h2 className="font-display font-bold text-[clamp(2.2rem,5vw,3.5rem)] leading-tight text-white tracking-widest">
+          <h2 className="font-display font-bold text-[clamp(1.8rem,4vw,2.8rem)] leading-tight text-white tracking-widest">
             My <span className="gradient-text">Education</span>
           </h2>
-          <div className="w-24 h-1.5 bg-primary-600 rounded-full mx-auto mt-6" />
+          <div className="w-20 h-1 bg-primary-600 rounded-full mx-auto mt-4" />
         </div>
 
         {/* Timeline */}
@@ -41,7 +41,7 @@ export default function Education() {
           {/* Vertical line */}
           <div className="timeline-line" />
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {education.map((item, index) => (
               <div
                 key={index}

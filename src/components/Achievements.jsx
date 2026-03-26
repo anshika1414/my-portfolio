@@ -17,23 +17,23 @@ const achievements = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-20 sm:py-28 px-4 bg-[#0c0c0c]">
+    <section id="achievements" className="py-14 sm:py-20 px-4 bg-transparent">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 reveal">
+        <div className="text-center mb-10 reveal">
           <p className="text-primary-400 font-medium text-xs tracking-[0.3em] uppercase mb-4 text-center w-full">
             Milestones
           </p>
-          <h2 className="font-display font-bold text-[clamp(2.2rem,5vw,3.5rem)] leading-tight text-white tracking-widest">
+          <h2 className="font-display font-bold text-[clamp(1.8rem,4vw,2.8rem)] leading-tight text-white tracking-widest">
             Key <span className="gradient-text">Achievements</span>
           </h2>
-          <div className="w-24 h-1.5 bg-primary-600 rounded-full mx-auto mt-6" />
+          <div className="w-20 h-1 bg-primary-600 rounded-full mx-auto mt-4" />
         </div>
 
-        <div className="flex flex-col gap-8 max-w-6xl mx-auto items-center">
+        <div className="flex flex-col gap-6 max-w-6xl mx-auto items-center">
           {achievements.map((item, index) => (
             <div
               key={index}
-              className="reveal glass p-8 sm:py-12 sm:px-16 md:px-20 rounded-3xl border border-white/5 flex flex-col sm:flex-row items-center sm:items-start gap-10 card-hover relative group overflow-hidden w-[95%] md:w-[90%] lg:w-[88%]"
+              className="reveal glass p-6 sm:py-8 sm:px-12 md:px-16 rounded-3xl border border-white/5 flex flex-col sm:flex-row items-center sm:items-start gap-8 card-hover relative group overflow-hidden w-[95%] md:w-[90%] lg:w-[88%]"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary-600/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:bg-primary-600/10 transition-colors" />
               
@@ -47,7 +47,7 @@ export default function Achievements() {
                 <span className="inline-block text-[10px] font-black text-primary-400 mb-3 uppercase tracking-[0.3em] bg-primary-400/5 px-3 py-1 rounded-full border border-primary-400/10">
                   {item.result}
                 </span>
-                <h3 className="font-display font-bold text-2xl sm:text-3xl text-white mb-4">
+                <h3 className="font-display font-bold text-xl sm:text-2xl text-white mb-3">
                   {item.title}
                 </h3>
                 <p className="text-dark-400 text-sm sm:text-base leading-relaxed max-w-2xl">

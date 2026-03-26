@@ -49,26 +49,23 @@ export default function Certificates() {
     }
   }, [selectedCert])
   return (
-    <section id="certificates" className="py-20 sm:py-28 px-4 bg-dark-950/30">
+    <section id="certificates" className="py-14 sm:py-20 px-4 bg-transparent">
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
-        <div className="text-center mb-12 reveal">
-          <p className="text-primary-400 font-medium text-xs tracking-[0.3em] uppercase mb-4 text-center w-full">
-            Honors & Awards
-          </p>
-          <h2 className="font-display font-bold text-[clamp(2.2rem,5vw,3.5rem)] leading-tight text-white tracking-widest">
+        <div className="text-center mb-10 reveal">
+          <h2 className="font-display font-bold text-[clamp(1.8rem,4vw,2.8rem)] leading-tight text-white tracking-widest">
             My <span className="gradient-text">Certificates</span>
           </h2>
-          <div className="w-24 h-1.5 bg-primary-600 rounded-full mx-auto mt-6" />
+          <div className="w-20 h-1 bg-primary-600 rounded-full mx-auto mt-4" />
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {certificates.map((cert, index) => (
             <div
               key={index}
-              className="reveal glass p-8 rounded-2xl flex flex-col items-center text-center card-hover border border-white/5 group"
+              className="reveal glass p-6 rounded-2xl flex flex-col items-center text-center card-hover border border-white/5 group"
             >
-              <div className="w-16 h-16 rounded-full bg-primary-600/10 flex items-center justify-center text-primary-400 mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-full bg-primary-600/10 flex items-center justify-center text-primary-400 mb-4 shadow-inner group-hover:scale-110 transition-transform duration-300">
                 <FaCertificate size={28} />
               </div>
               <h3 className="font-display font-bold text-white mb-3 text-lg leading-snug">
@@ -77,7 +74,7 @@ export default function Certificates() {
               <p className="text-primary-400 text-sm font-medium mb-1">
                 {cert.issuer}
               </p>
-              <p className="text-dark-400 text-xs mb-8">
+              <p className="text-dark-400 text-xs mb-5">
                 {cert.date}
               </p>
               

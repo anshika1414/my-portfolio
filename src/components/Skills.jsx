@@ -45,14 +45,14 @@ export default function Skills() {
   }, [])
 
   return (
-    <section id="skills" className="py-24 px-4 bg-[#0c0c0c] min-h-screen font-sans selection:bg-primary-500/30">
-      <div className="max-w-6xl mx-auto border-t border-white/10 pt-12">
+    <section id="skills" className="py-14 sm:py-20 px-4 bg-transparent font-sans selection:bg-primary-500/30">
+      <div className="max-w-6xl mx-auto border-t border-white/10 pt-8">
         {/* Header Section */}
-        <div className="mb-12 reveal">
+        <div className="mb-8 reveal">
           <p className="text-[rgba(255,255,255,0.4)] font-medium text-xs tracking-[0.3em] uppercase mb-4">
             WHAT I KNOW
           </p>
-          <h2 className="font-display font-bold text-[clamp(2.2rem,5vw,3.5rem)] leading-tight text-white mb-8 tracking-widest">
+          <h2 className="font-display font-bold text-[clamp(1.8rem,4vw,2.8rem)] leading-tight text-white mb-6 tracking-widest">
             My <span className="text-primary-400">Skills</span>
           </h2>
           <div className="w-full h-[1px] bg-white/10" />
@@ -69,7 +69,7 @@ export default function Skills() {
                 <button
                   key={cat.title}
                   onClick={() => setActiveTab(cat.title)}
-                  className={`group relative flex items-center lg:w-full py-4 px-6 lg:px-0 transition-all duration-300 whitespace-nowrap lg:whitespace-normal overflow-hidden h-16 lg:h-20 ${
+                  className={`group relative flex items-center lg:w-full py-3 px-6 lg:px-0 transition-all duration-300 whitespace-nowrap lg:whitespace-normal overflow-hidden h-14 lg:h-16 ${
                     activeTab === cat.title ? 'z-10' : ''
                   }`}
                 >
@@ -105,14 +105,14 @@ export default function Skills() {
           </div>
 
           {/* Content Panel: Skills Wall */}
-          <div className="lg:pl-20 reveal min-h-[500px]">
+          <div className="lg:pl-20 reveal min-h-[400px]">
             <div key={activeTab} className="animate-fade-in">
               {/* Category Header */}
-              <div className="mb-12">
-                <h3 className="text-[40px] font-display font-bold text-primary-400 leading-none mb-3">
+              <div className="mb-8">
+                <h3 className="text-[32px] font-display font-bold text-primary-400 leading-none mb-3">
                   {currentCategory.title}
                 </h3>
-                <p className="text-[10px] sm:text-xs font-medium tracking-[0.3em] text-white/40 uppercase mb-6">
+                <p className="text-[10px] sm:text-xs font-medium tracking-[0.3em] text-white/40 uppercase mb-4">
                   {currentCategory.skills.length} SKILLS
                 </p>
                 <div className="w-full h-[1px] bg-white/10" />
@@ -123,11 +123,11 @@ export default function Skills() {
                 {currentCategory.skills.map((skill, index) => (
                   <div
                     key={skill}
-                    className="group flex items-center justify-between py-6 transition-all duration-300 cursor-default px-2 -mx-2 hover:bg-white/[0.02] rounded-lg"
+                    className="group flex items-center justify-between py-4 transition-all duration-300 cursor-default px-2 -mx-2 hover:bg-white/[0.02] rounded-lg"
                   >
                     <div className="flex items-center gap-6">
                       <div className="w-2 h-2 rounded-full bg-primary-400 shadow-[0_0_10px_rgba(167,139,250,0.4)] opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300" />
-                      <span className="text-xl sm:text-2xl text-white/65 group-hover:text-white transition-colors duration-300 tracking-tight">
+                      <span className="text-lg sm:text-xl text-white/65 group-hover:text-white transition-colors duration-300 tracking-tight">
                         {skill}
                       </span>
                     </div>
