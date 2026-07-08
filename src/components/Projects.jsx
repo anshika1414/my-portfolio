@@ -1,9 +1,38 @@
 import { useState, useEffect } from 'react'
-import { FaGithub, FaTimes, FaArrowRight, FaLightbulb, FaTools, FaCheckCircle } from 'react-icons/fa'
+import { FaGithub, FaTimes, FaArrowRight, FaLightbulb, FaTools, FaCheckCircle, FaExternalLinkAlt } from 'react-icons/fa'
 
 const projects = [
   {
     id: 1,
+    title: 'FootPrintIQ',
+    subtitle: 'Digital Footprint Risk Analyzer',
+    shortDesc: 'AI-powered platform that analyzes digital footprints using Machine Learning, NLP, breach detection APIs, and interactive analytics to generate personalized cybersecurity risk assessments.',
+    overview: 'FootPrintIQ is an AI-powered cybersecurity application that analyzes a user\'s digital footprint to estimate online security risk. The system combines machine learning, NLP, behavioral feature analysis, breach detection APIs, and interactive visualizations to generate a personalized Digital Risk Score with actionable cybersecurity recommendations.',
+    problem: 'Individuals often expose personal information across multiple online platforms without understanding the associated cybersecurity risks. Existing tools rarely provide a unified assessment of digital exposure together with personalized recommendations.',
+    methodology: 'Built an end-to-end Streamlit application integrating feature engineering, a trained machine learning classifier, Toxic-BERT NLP, breach detection APIs, username analysis, and interactive visualizations to generate a comprehensive Digital Risk Score and personalized cybersecurity recommendations.',
+    features: [
+      'Digital Risk Score Prediction',
+      'Email Breach Detection',
+      'Toxicity Analysis using Toxic-BERT',
+      'Interactive Plotly Visualizations',
+      'Personalized Cybersecurity Recommendations',
+      'Username Platform Analysis',
+      'Interactive Risk Dashboard',
+      'Live Cloud Deployment'
+    ],
+    impact: 'Transforms scattered online exposure into a single personalized Digital Risk Score with actionable cybersecurity recommendations.',
+    metrics: [
+      { label: 'Accuracy', value: '82%' },
+      { label: 'Signals Analyzed', value: '8 Signals' }
+    ],
+    image: '/footprintiq.png',
+    tags: ['Python', 'NLP', 'Streamlit', 'Machine Learning'],
+    techStack: 'Python, Streamlit, Scikit-learn, Transformers, Plotly, REST APIs, Machine Learning, NLP, NumPy, Joblib',
+    github: 'https://github.com/anshika1414/digital-footprint-analyzer',
+    demo: 'https://digital-footprint-analyzer.streamlit.app/'
+  },
+  {
+    id: 2,
     title: 'DelayScope',
     subtitle: 'Flight Delay Prediction System',
     shortDesc: 'An ML system that predicts the probability of flight delay, estimated delay duration, and likely cause of delay.',
@@ -28,7 +57,7 @@ const projects = [
     github: 'https://github.com'
   },
   {
-    id: 2,
+    id: 3,
     title: 'COVIDScope',
     subtitle: 'Real-Time Pandemic Analytics Dashboard',
     shortDesc: 'An interactive data analytics dashboard designed to monitor and visualize global pandemic trends in real time.',
@@ -53,7 +82,7 @@ const projects = [
     github: 'https://github.com'
   },
   {
-    id: 3,
+    id: 4,
     title: 'CAMPASS',
     subtitle: 'Campus Route Optimizer',
     shortDesc: 'Algorithmic campus route optimizer for students and faculty.',
@@ -319,15 +348,26 @@ export default function Projects() {
                     </div>
 
                     <div className="flex flex-col gap-4">
-                      <a
-                        href={selectedProject.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-3 w-full py-5 bg-white text-black font-display font-black text-xs uppercase tracking-[0.2em] rounded-2xl hover:bg-primary-500 hover:text-white transition-all duration-300"
-                      >
-                        <FaGithub size={18} /> View Repository
-                      </a>
-
+                      {selectedProject.demo && (
+                        <a
+                          href={selectedProject.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-3 w-full py-5 bg-primary-500 text-white font-display font-black text-xs uppercase tracking-[0.2em] rounded-2xl hover:bg-white hover:text-black transition-all duration-300"
+                        >
+                          <FaExternalLinkAlt size={18} /> Live Demo
+                        </a>
+                      )}
+                      {selectedProject.github && (
+                        <a
+                          href={selectedProject.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-3 w-full py-5 bg-white text-black font-display font-black text-xs uppercase tracking-[0.2em] rounded-2xl hover:bg-primary-500 hover:text-white transition-all duration-300"
+                        >
+                          <FaGithub size={18} /> View Repository
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

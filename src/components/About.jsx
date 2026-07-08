@@ -56,7 +56,7 @@ export default function About() {
             {/* Quick stats */}
             <div className="grid grid-cols-3 gap-4">
               {[
-                { number: '3', label: 'Projects' },
+                { number: '4', label: 'Projects' },
                 { number: '20+', label: 'Skills' },
                 { number: '4+', label: 'Certifications' },
               ].map((s) => (
